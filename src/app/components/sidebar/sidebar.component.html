@@ -1,4 +1,4 @@
-<div class="fixed top-0 left-0 bottom-0 w-sidebar-width p-3 bg-spotify-black">
+<div class="fixed top-0 left-0 bottom-0 w-sidebar-width p-3">
   <nav class="bg-spotify-black rounded-lg p-4">
     <div class="flex">
       <img src="assets/icons/logo-spotify.png" alt="Spotify" class="w-20" />
@@ -35,15 +35,37 @@
       <mat-icon class="text-spotify-gray hover:text-white">add</mat-icon>
     </div>
 
-    <div class="bg-spotify-light-black rounded-lg p-4 mt-2">
-      <div class="text-white">
-        <p class="font-bold mb-2">Crie sua primeira playlist</p>
-        <p class="text-sm">É fácil, vamos te ajudar</p>
+    <section
+      class="flex items-start justify-between gap-5 bg-spotify-light-black text-spotify-gray font-semibold m-2 py-4 px-5 rounded-lg"
+    >
+      <div class="flex flex-col">
+        <span class="pb-4 text-sm text-spotify-whithe font-bold">
+          Crie sua primeira playlist
+        </span>
+        <span class="pb-4 text-xs text-spotify-whithe font-medium">
+          É fácil, vamos te ajudar
+        </span>
+
+        <button
+          class="flex justify-center bg-white text-black rounded-full p-3 mt-3 border-0 font-bold text-xs hover:bg-spotify-green w-28"
+        >
+          Criar playlist
+        </button>
       </div>
-      <button
-        class="bg-white text-black rounded-full px-4 py-2 mt-4 font-bold text-sm hover:scale-105"
+    </section>
+
+    <div class="my-6 mx-5">
+      <a href="" class="text-spotify-gray font-medium text-xs hover:underline"
+        >Cookies</a
       >
-        Criar playlist
+    </div>
+
+    <div>
+      <button
+        class="flex items-center bg-transparent border border-spotify-border rounded-3xl text-spotify-whithe font-bold cursor-pointer m-2 py-2 px-4"
+      >
+        <mat-icon class="mr-1 mb-1 text-lg">public</mat-icon>
+        <span class="text-sm">Português do Brasil</span>
       </button>
     </div>
   </div>
