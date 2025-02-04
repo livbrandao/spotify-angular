@@ -1,0 +1,31 @@
+<div class="h-[68vh] pt-4 m-2.5 rounded-[10px] bg-spotify-black">
+  <div id="result-playlists">
+    <div class="m-6">
+      <h1 id="greeting" class="text-spotify-white text-3xl font-bold mb-12">
+        Boas vindas
+      </h1>
+      <h2 class="text-spotify-white text-2xl font-bold">
+        Navegar por todas as seções
+      </h2>
+    </div>
+
+    <div class="max-h-[43vh] m-6 overflow-y-auto scrollbar-1px">
+      <div>
+        <section class="grid justify-center grid-cols-4 gap-4 mb-4">
+          <app-playlist-card
+            *ngFor="let card of cards"
+            [imageUrl]="card.imageUrl"
+            [imageAlt]="card.imageAlt"
+            [title]="card.title"
+            [link]="card.link"
+            [backgroundColor]="card.backgroundColor"
+          ></app-playlist-card>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <div id="result-artist" class="hidden px-[20px] py-10">
+    <div class="gap-6 grid min-w-[767px] grid-cols-5"></div>
+  </div>
+</div>

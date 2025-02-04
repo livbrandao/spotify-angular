@@ -2,10 +2,10 @@
 <app-sidebar></app-sidebar>
 
 <!-- Conteúdo principal -->
-<main class="max-w-[80vw] h-screen ml-80 mr-14 overflow-auto">
-  <app-header
-    class="fixed top-0 left-72 right-14 z-50 w-[calc(80vw-1rem)]"
-  ></app-header>
+<main class="max-w-[80vw] h-screen ml-80 mr-14 flex flex-col">
+  <app-header class="flex-shrink-0 z-50 w-full"></app-header>
+
+  <app-container class="flex-grow overflow-auto"></app-container>
 </main>
 
 <!-- Footer -->
