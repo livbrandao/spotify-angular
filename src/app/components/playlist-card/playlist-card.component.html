@@ -1,0 +1,19 @@
+<a
+  [href]="link"
+  class="relative w-[250px] h-[200px] overflow-hidden rounded-lg"
+>
+  <div
+    class="relative w-[250px] h-[200px] overflow-hidden rounded-lg"
+    [style.background-color]="backgroundColor"
+  >
+    <img
+      [src]="imageUrl"
+      [alt]="imageAlt"
+      loading="lazy"
+      class="absolute right-0 bottom-0 h-auto w-[107px] rotate-[25deg] translate-x-[18%] -translate-y-[2%]"
+    />
+    <span class="p-4 absolute text-spotify-white text-2xl font-bold">{{
+      title
+    }}</span>
+  </div>
+</a>
