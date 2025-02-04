@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .scrollbar-1px {
+    scrollbar-width: 1px;
+  }
+  .scrollbar-1px::-webkit-scrollbar {
+    width: 1px;
+    height: 1px;
+  }
+  .scrollbar-1px::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+}
+
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 
 html,
