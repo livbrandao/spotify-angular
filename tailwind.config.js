@@ -11,7 +11,7 @@ module.exports = {
         "spotify-light-gray": "#a7a7a7",
         "spotify-hover": "#252525",
         "spotify-border": "#878787",
-        "spotify-whithe": "#fff",
+        "spotify-white": "#fff",
         "spotify-icon": "#131313",
         "spotify-arrow-color": "rgba(0, 0, 0, 7)",
       },
