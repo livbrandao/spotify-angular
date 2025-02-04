@@ -1,0 +1,63 @@
+<nav
+  class="flex justify-between items-center p-4 m-2.5 rounded-lg bg-spotify-black"
+>
+  <div class="flex justify-around items-center">
+    <button
+      class="mr-5 w-8 h-8 flex items-center justify-center rounded-full bg-spotify-arrow-color cursor-pointer"
+      aria-label="Voltar"
+      type="button"
+    >
+      <img
+        src="assets/icons/small-left.png"
+        alt="Seta esquerda"
+        class="w-4 h-4"
+        loading="lazy"
+      />
+    </button>
+    <button
+      class="w-8 h-8 flex items-center justify-center rounded-full bg-spotify-arrow-color cursor-pointer"
+      aria-label="Próximo"
+      type="button"
+    >
+      <img
+        src="assets/icons/small-right.png"
+        alt="Seta direita"
+        class="w-4 h-4"
+        loading="lazy"
+      />
+    </button>
+  </div>
+
+  <div
+    class="flex items-center w-[365px] h-12 ml-2 bg-spotify-light-black rounded-[500px] border border-transparent"
+  >
+    <img
+      src="assets/icons/search.png"
+      alt=""
+      class="w-4 h-4 ml-2.5"
+      loading="lazy"
+    />
+    <input
+      id="search-input"
+      type="text"
+      aria-label="Buscar artista"
+      maxlength="800"
+      placeholder="O que você quer ouvir?"
+      class="bg-transparent border-none pr-[100px] pl-3 text-spotify-light-gray truncate outline-none text-sm"
+    />
+  </div>
+
+  <div class="flex items-center">
+    <button
+      class="text-spotify-light-gray text-base font-bold bg-transparent mr-8 hover:text-spotify-whithe"
+    >
+      Inscreva-se
+    </button>
+
+    <button
+      class="w-[100px] h-12 text-black text-base font-bold rounded-[40px] bg-white hover:bg-spotify-green"
+    >
+      Entrar
+    </button>
+  </div>
+</nav>
