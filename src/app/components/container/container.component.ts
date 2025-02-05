@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Card } from '../../interfaces/card.interface';
 import { PlaylistCardComponent } from '../playlist-card/playlist-card.component';
 import { CommonModule } from '@angular/common';
+import { ArtistCardComponent } from '../artist-card/artist-card.component';
+import { Artist } from '../../interfaces/artist.interface';
 
 @Component({
   selector: 'app-container',
   standalone: true,
-  imports: [PlaylistCardComponent, CommonModule],
+  imports: [PlaylistCardComponent, CommonModule, ArtistCardComponent],
   templateUrl: './container.component.html',
   styleUrl: './container.component.scss',
 })
@@ -116,6 +118,13 @@ export class ContainerComponent implements OnInit {
       title: 'Música Latina',
       link: '',
       backgroundColor: 'rgb(60, 30, 80)',
+    },
+  ];
+
+  artist: Artist[] = [
+    {
+      urlImg: 'assets/playlist/1.jpeg',
+      name: 'boas festas',
     },
   ];
 

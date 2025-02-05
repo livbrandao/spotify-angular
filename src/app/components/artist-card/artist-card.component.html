@@ -1,0 +1,37 @@
+<div
+  class="bg-spotify-medium-black rounded-lg flex-1 transition-colors duration-300 ease-in-out isolate p-4 relative w-full hover:hover:scale-105 hover:opacity-100 hover:-translate-y-5"
+  id=""
+>
+  <div class="pb-[100%] relative w-full mb-4">
+    <img
+      id="artist-img"
+      [src]="urlImg"
+      class="h-full left-0 absolute top-0 w-full rounded-[50%]"
+      loading="lazy"
+    />
+    <div class="relative">
+      <mat-icon
+        class="absolute right-2.5 top-[120px] p-[18px] bg-spotify-green hover:p-5 hover:cursor-pointer opacity-100 rounded-[100%] text-sm transition-all ease-linear duration-400 -translate-y-5"
+        >play_arrow</mat-icon
+      >
+    </div>
+  </div>
+
+  <div
+    class="flex flex-col overflow-hidden ellipsis whitespace-nowrap min-h-[62px]"
+  >
+    <a
+      title="Foo Fighters"
+      class="vst flex flex-col max-w-full align-middle decoration-transparent"
+      href=""
+    >
+      <span
+        class="box-border my-0 text-base font-bold pb-2 text-spotify-white"
+        id="artist-name"
+        >{{ name }}</span
+      >
+
+      <span class="text-spotify-medium-gray font-normal text-xs">Artista</span>
+    </a>
+  </div>
+</div>
