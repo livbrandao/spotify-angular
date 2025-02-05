@@ -3,9 +3,15 @@
 
 <!-- Conteúdo principal -->
 <main class="max-w-[80vw] h-screen ml-80 mr-14 flex flex-col">
-  <app-header class="flex-shrink-0 z-50 w-full"></app-header>
+  <app-header
+    (searchEvent)="onSearch($event)"
+    class="flex-shrink-0 z-50 w-full"
+  ></app-header>
 
-  <app-container class="flex-grow overflow-auto"></app-container>
+  <app-container
+    [searchTerm]="searchTerm"
+    class="flex-grow overflow-auto"
+  ></app-container>
 </main>
 
 <!-- Footer -->

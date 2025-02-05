@@ -33,7 +33,7 @@
   >
     <img
       src="assets/icons/search.png"
-      alt=""
+      alt="Ícone de busca"
       class="w-4 h-4 ml-2.5"
       loading="lazy"
     />
@@ -43,6 +43,8 @@
       aria-label="Buscar artista"
       maxlength="800"
       placeholder="O que você quer ouvir?"
+      [(ngModel)]="searchTerm"
+      (input)="onSearchChange()"
       class="bg-transparent border-none pr-[100px] pl-3 text-spotify-light-gray truncate outline-none text-sm"
     />
   </div>

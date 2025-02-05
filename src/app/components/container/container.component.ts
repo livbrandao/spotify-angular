@@ -1,18 +1,65 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { Card } from '../../interfaces/card.interface';
 import { PlaylistCardComponent } from '../playlist-card/playlist-card.component';
 import { CommonModule } from '@angular/common';
 import { ArtistCardComponent } from '../artist-card/artist-card.component';
 import { Artist } from '../../interfaces/artist.interface';
+import { ArtistsService } from '../../services/artist.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-container',
   standalone: true,
-  imports: [PlaylistCardComponent, CommonModule, ArtistCardComponent],
+  imports: [
+    PlaylistCardComponent,
+    CommonModule,
+    ArtistCardComponent,
+    HttpClientModule,
+  ],
   templateUrl: './container.component.html',
   styleUrl: './container.component.scss',
 })
-export class ContainerComponent implements OnInit {
+export class ContainerComponent implements OnChanges, OnInit {
+  @Input() searchTerm: string = '';
+  artists: Artist[] = [];
+  allArtists: Artist[] = [];
+
+  constructor(private artistsService: ArtistsService) {}
+
+  ngOnInit(): void {
+    this.getArtists();
+  }
+
+  getArtists(): void {
+    this.artistsService.getArtists().subscribe((data) => {
+      this.artists = data;
+      this.allArtists = data;
+    });
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['searchTerm']) {
+      this.filterArtists();
+    }
+  }
+
+  filterArtists(): void {
+    if (!this.searchTerm) {
+      this.artists = [...this.allArtists];
+      return;
+    }
+
+    this.artists = this.allArtists.filter((artist) =>
+      artist.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+  }
+
   cards: Card[] = [
     {
       imageUrl: 'assets/playlist/1.jpeg',
@@ -127,6 +174,4 @@ export class ContainerComponent implements OnInit {
       name: 'boas festas',
     },
   ];
-
-  ngOnInit() {}
 }

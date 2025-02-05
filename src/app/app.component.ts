@@ -16,4 +16,10 @@ import { ContainerComponent } from './components/container/container.component';
   ],
   templateUrl: './app.component.html',
 })
-export class AppComponent {}
+export class AppComponent {
+  searchTerm: string = '';
+
+  onSearch(term: string): void {
+    this.searchTerm = term;
+  }
+}
