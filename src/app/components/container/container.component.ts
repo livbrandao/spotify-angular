@@ -12,6 +12,12 @@ import { ArtistCardComponent } from '../artist-card/artist-card.component';
 import { Artist } from '../../interfaces/artist.interface';
 import { ArtistsService } from '../../services/artist.service';
 import { HttpClientModule } from '@angular/common/http';
+import {
+  BehaviorSubject,
+  debounceTime,
+  distinctUntilChanged,
+  switchMap,
+} from 'rxjs';
 
 @Component({
   selector: 'app-container',
@@ -27,37 +33,37 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class ContainerComponent implements OnChanges, OnInit {
   @Input() searchTerm: string = '';
+
   artists: Artist[] = [];
-  allArtists: Artist[] = [];
+
+  private searchSubject = new BehaviorSubject<string>('');
 
   constructor(private artistsService: ArtistsService) {}
 
   ngOnInit(): void {
     this.getArtists();
+
+    this.searchSubject
+      .pipe(
+        debounceTime(300),
+        distinctUntilChanged(),
+        switchMap((term) => this.artistsService.searchArtists(term))
+      )
+      .subscribe((data) => {
+        this.artists = data;
+      });
   }
 
   getArtists(): void {
     this.artistsService.getArtists().subscribe((data) => {
       this.artists = data;
-      this.allArtists = data;
     });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['searchTerm']) {
-      this.filterArtists();
+      this.searchSubject.next(this.searchTerm);
     }
-  }
-
-  filterArtists(): void {
-    if (!this.searchTerm) {
-      this.artists = [...this.allArtists];
-      return;
-    }
-
-    this.artists = this.allArtists.filter((artist) =>
-      artist.name.toLowerCase().includes(this.searchTerm.toLowerCase())
-    );
   }
 
   cards: Card[] = [
@@ -165,13 +171,6 @@ export class ContainerComponent implements OnChanges, OnInit {
       title: 'Música Latina',
       link: '',
       backgroundColor: 'rgb(60, 30, 80)',
-    },
-  ];
-
-  artist: Artist[] = [
-    {
-      urlImg: 'assets/playlist/1.jpeg',
-      name: 'boas festas',
     },
   ];
 }

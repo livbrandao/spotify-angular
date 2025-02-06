@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Artist } from '../interfaces/artist.interface';
 
 @Injectable({
@@ -13,5 +13,19 @@ export class ArtistsService {
 
   getArtists(): Observable<Artist[]> {
     return this.http.get<Artist[]>(this.apiUrl);
+  }
+
+  searchArtists(term: string): Observable<Artist[]> {
+    return this.http
+      .get<Artist[]>(this.apiUrl)
+      .pipe(
+        map((artists) =>
+          artists.filter(
+            (artist) =>
+              artist.name.toLowerCase().includes(term.toLowerCase()) ||
+              artist.genre?.toLowerCase().includes(term.toLowerCase())
+          )
+        )
+      );
   }
 }

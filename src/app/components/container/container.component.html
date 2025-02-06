@@ -25,7 +25,7 @@
     </div>
   </div>
 
-  <div id="result-artist" class="hidden px-[20px] py-10" *ngIf="searchTerm">
+  <div id="result-artist" class="px-[20px] py-10" *ngIf="searchTerm">
     <div class="gap-6 grid min-w-[767px] grid-cols-5">
       <app-artist-card
         *ngFor="let artist of artists"
