@@ -9,7 +9,7 @@
       </h2>
     </div>
 
-    <div class="max-h-[43vh] m-6 overflow-y-auto scrollbar-1px">
+    <div class="max-h-[42vh] m-6 overflow-y-auto scrollbar-1px">
       <div>
         <section class="grid justify-center grid-cols-4 gap-4 mb-4">
           <app-playlist-card
@@ -25,7 +25,11 @@
     </div>
   </div>
 
-  <div id="result-artist" class="px-[20px] py-10" *ngIf="searchTerm">
+  <div
+    id="result-artist"
+    class="px-[20px] py-6 max-h-[60vh] overflow-y-auto scrollbar-1px"
+    *ngIf="searchTerm"
+  >
     <div class="gap-6 grid min-w-[767px] grid-cols-5">
       <app-artist-card
         *ngFor="let artist of artists"
