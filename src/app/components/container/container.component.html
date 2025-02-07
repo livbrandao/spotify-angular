@@ -1,7 +1,10 @@
-<div class="h-[68vh] pt-4 m-2.5 rounded-[10px] bg-spotify-black">
+<div class="h-[68vh] pt-4 m-1 xl:m-2.5 rounded-[10px] bg-spotify-black">
   <div id="result-playlists" *ngIf="!searchTerm">
-    <div class="m-6">
-      <h1 id="greeting" class="text-spotify-white text-3xl font-bold mb-12">
+    <div class="mx-6 lg:mt-1 xl:m-6">
+      <h1
+        id="greeting"
+        class="text-spotify-white text-3xl font-bold mb-8 xl:mb-12"
+      >
         Boas vindas
       </h1>
       <h2 class="text-spotify-white text-2xl font-bold">
@@ -9,9 +12,11 @@
       </h2>
     </div>
 
-    <div class="max-h-[42vh] m-6 overflow-y-auto scrollbar-1px">
+    <div class="max-h-[44vh] xl:max-h-[42vh] m-6 overflow-y-auto scrollbar-1px">
       <div>
-        <section class="grid justify-center grid-cols-4 gap-4 mb-4">
+        <section
+          class="grid justify-center grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-4"
+        >
           <app-playlist-card
             *ngFor="let card of cards"
             [imageUrl]="card.imageUrl"
