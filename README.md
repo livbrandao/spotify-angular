@@ -1,27 +1,118 @@
-# SpotifyAngular
+# Clone do Spotify em Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
+Uma aplicação web moderna construída com Angular que recria a interface do Spotify, oferecendo uma experiência responsiva e intuitiva de streaming de música.
 
-## Development server
+## 🚀 Funcionalidades
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Busca de artistas por nome e gênero musical
+- Menu lateral responsivo
+- Cabeçalho dinâmico com funcionalidade de busca
+- Exibição de playlists com cards personalizados
+- Interface moderna com Tailwind CSS
+- Integração com Material Design e ícones
+- Animações e transições ao passar o mouse
+- Carregamento lazy para imagens
+- Componentes de cards reutiliáaveis
 
-## Code scaffolding
+## 🛠️ Tecnologias Utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular 18.2.0
+- Angular Material 18.2.14
+- Tailwind CSS 3.2.4
+- RxJS 7.8.0
+- TypeScript 5.5.2
 
-## Build
+## 📋 Pré-requisitos
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Node.js (Recomendada a última versão LTS)
+- npm (incluído com Node.js)
+- Angular CLI 18.2.10 ou superior
+- JSON Server (para simular a API)
 
-## Running unit tests
+## 💻 Instalação
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Clone o repositório
 
-## Running end-to-end tests
+```bash
+git clone https://github.com/livbrandao/spotify-angular.git
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. Entre na pasta do projeto
 
-## Further help
+```bash
+cd spotify-angular
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+3. Instale as dependências
+
+```bash
+npm install
+```
+
+4. Inicie o JSON Server (para dados dos artistas)
+
+```bash
+json-server --watch db-artists.json --port 3000
+```
+
+## 🚀 Executando a Aplicação
+
+### Servidor de desenvolvimento
+
+```bash
+ng serve
+```
+
+Acesse `http://localhost:4200/`. A aplicação será recarregada automaticamente se você alterar qualquer arquivo fonte.
+
+### Build de produção
+
+```bash
+ng build
+```
+
+Os arquivos de build serão armazenados no diretório `dist/`.
+
+## 📁 Estrutura do Projeto
+
+### Componentes
+
+- `app-sidebar`: Componente do menu lateral
+- `app-header`: Componente do cabeçalho com busca
+- `app-container`: Container principal de conteúdo
+- `app-footer`: Componente do rodapé com controles do player
+- `artist-card`: Exibe informações individuais dos artistas com efeitos hover
+- `playlist-card`: Mostra informações das playlists com cores de fundo personalizadas
+
+### Serviços
+
+- `ArtistsService`: Gerencia a comunicação com a API para dados dos artistas
+  - GET lista de artistas
+  - Busca artistas por nome ou gênero
+
+## 🎨 Estilização
+
+O projeto utiliza:
+
+- Tailwind CSS para estilização utility-first
+- Angular Material para ícones e componentes de UI
+- Esquema de cores compatível com o design do Spotify
+- Animações e transições personalizadas
+- Design responsivo para diversos tamanhos de tela
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT - veja o arquivo LICENSE para detalhes.
+
+## 📧 Contato
+
+Lívia - [liviatoledo27@gmail.com]
+
+Link do Projeto: https://github.com/livbrandao/spotify-angular
+
+## 📚 Recursos Adicionais
+
+- [Documentação do Angular](https://angular.dev/)
+- [Documentação do Tailwind CSS](https://tailwindcss.com/docs)
+- [Documentação do Angular Material](https://material.angular.io/)
+- [Documentação do JSON Server](https://github.com/typicode/json-server)
